@@ -20,16 +20,15 @@ func WithSize[K comparable, V any](maxSize int) Option[K, V] {
 }
 
 type ARC[K comparable, V any] struct {
-	p           int
-	c           int
-	t1          *list.List[*entry[K, V]]
-	b1          *list.List[*entry[K, V]]
-	t2          *list.List[*entry[K, V]]
-	b2          *list.List[*entry[K, V]]
-	mutex       sync.Mutex
-	len         int
-	cache       map[K]*entry[K, V]
-	staleReturn bool
+	p     int
+	c     int
+	t1    *list.List[*entry[K, V]]
+	b1    *list.List[*entry[K, V]]
+	t2    *list.List[*entry[K, V]]
+	b2    *list.List[*entry[K, V]]
+	mutex sync.Mutex
+	len   int
+	cache map[K]*entry[K, V]
 }
 
 // New returns a new Adaptive Replacement Cache (ARC).
@@ -118,7 +117,7 @@ func (a *ARC[K, V]) get(key K) (e *entry[K, V], ok bool) {
 // GetWithExpire returns any representation of a cached response,
 // a time.Time Give expected expires,
 // and a bool set to true if the key was found.
-// This method will NOT check the maxAge of element and will NOT update the expires.
+// This method will NOT update the expires.
 func (a *ARC[K, V]) GetWithExpire(key K) (V, time.Time, bool) {
 	a.mutex.Lock()
 	defer a.mutex.Unlock()

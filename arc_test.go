@@ -1,6 +1,8 @@
 package arc
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestInsertion(t *testing.T) {
 	cache := New[string, string](WithSize[string, string](3))
