@@ -1,9 +1,28 @@
-[![Build Status](https://travis-ci.org/alexanderGugel/arc.svg?branch=master)](https://travis-ci.org/alexanderGugel/arc)
+## usage
+```go
+import (
+	"fmt"
 
-**NEW** Looking for an ARC in Javascript? - [alexanderGugel/arc-js](https://github.com/alexanderGugel/arc-js)
+	arc "github.com/larvanz/ARC"
+)
 
-arc
-===
+func main() {
+	const (
+		k1 = "Hello"
+		v1 = "World"
+	)
+	cache := arc.New[string, string](arc.WithSize[string, string](3))
+
+	// Insert the first value
+	cache.Set(k1, v1)
+
+	fmt.Println(cache.Get(k1))
+}
+
+```
+---
+## arc
+
 
 An [Adaptive Replacement Cache (ARC)](http://web.archive.org/web/20150405221102/https://www.usenix.org/legacy/event/fast03/tech/full_papers/megiddo/megiddo.pdf) written in [Go](http://golang.org/).
 
