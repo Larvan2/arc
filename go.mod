@@ -1,4 +1,4 @@
-module github.com/larvan2/arc
+module github.com/larvan2/generic-arc
 
 go 1.21.5
 

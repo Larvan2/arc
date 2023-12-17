@@ -6,7 +6,7 @@
 import (
 	"fmt"
 
-	arc "github.com/larvan2/arc"
+	arc "github.com/larvan2/generic-arc"
 )
 
 func main() {
