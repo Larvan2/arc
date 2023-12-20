@@ -30,7 +30,7 @@ func main() {
 
 An [Adaptive Replacement Cache (ARC)](http://web.archive.org/web/20150405221102/https://www.usenix.org/legacy/event/fast03/tech/full_papers/megiddo/megiddo.pdf) written in [Go](http://golang.org/).
 
-[GoDoc](https://godoc.org/github.com/alexanderGugel/arc)
+[GoDoc](https://godoc.org/github.com/Larvan2/generic-arc)
 
 This project implements "ARC", a self-tuning, low overhead replacement cache. The goal of this project is to expose an interface compareable to common LRU cache management systems. ARC uses a learning rule to adaptively and continually revise its assumptions about the workload in order to adjust the internal LRU and LFU cache sizes.
 
